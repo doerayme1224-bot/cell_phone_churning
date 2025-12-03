@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churning Prediction</title>
+</head>
+<body>
+    <h1>Churning Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="custserv_calls">Number of Customer Service Calls:</label>
+        <input type="text" name="custserv_calls" required><br>
+        <label for="day_mins">Number (in Minutes) of Call Time During the Day:</label>
+        <input type="text" name="day_mins" required><br>
+        <label for="day_charge">Amount (in USD) Paid for Calls During the Day:</label>
+        <input type="text" name="day_charge" required><br>
+        <label for="eve_mins">Number (in Minutes) of Call Time in the Evening:</label>
+        <input type="text" name="eve_mins" required><br>
+        <button type="submit">Predict</button>
+    </form>
+
+
+    {% if prediction_test %}
+        <h2>{{ prediction_test }}</h2>
+    {% endif %}
+</body>
+</html>
