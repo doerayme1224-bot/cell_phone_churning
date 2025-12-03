@@ -1,5 +1,5 @@
 ## Objective: 
-Churning refers to individuals that unsubscribe from a service. The goal of this project is to create a predictive model that that classifies customers as potential churners, or as non-churners based on usage patterns. This is going to be particularly useful for service preoviders trying to retain their customer base to minimize subscription losses. 
+Churning refers to individuals that unsubscribe from a service. The goal of this project is to create a predictive model that that classifies customers as potential churners, or as non-churners based on usage patterns. This is going to be particularly useful for service providers trying to retain their customer base to minimize subscription losses. 
 
 ---
 
@@ -15,12 +15,12 @@ This code uses the replace method to change the columns dtypes. I first selected
 ## PART 2: Exploratory Data Analysis (EDA)
 #### Visual 1:
 ![Heatmap](visuals/Correlations_of_Target_and_Features.png)
-this is a Hetmap which shows the correlation coeficients of all the features with the target variable `churn`. Important as it helps us decide which features to use for modeling
+this is a Heatmap which shows the correlation coefficients of all the features with the target variable `churn`. Important as it helps us decide which features to use for modeling
 
 ---
 #### Visual 2:
 ![Countplot](visuals/Number_of_Churns.png)
-shows the number of individuals, based on wether they did or did not churn on their cellphone provider. Shows us that the vast-majority of people do not churn on their cell phone providers
+shows the number of individuals, based on whether they did or did not churn on their cellphone provider. Shows us that the vast-majority of people do not churn on their cell phone providers
 
 ---
 #### Visual 3:
