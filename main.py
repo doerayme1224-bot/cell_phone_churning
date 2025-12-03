@@ -20,13 +20,19 @@ def predict_api():
     print(output[0]) 
     return jsonify(output[0]) 
 
-@app.route('/predict', methods=['POST']) 
-def predict(): 
-    input=[float(x) for x in request.form.values()] 
-    print(input)
-    input_array = np.array(input).reshape(1, -1) 
-    output=model.predict(input_array)[0]
-    return render_template("home.html", prediction_test="{}".format(output)) 
+@app.route('/predict', methods=['POST'])
+def predict():
+    input=[float(x) for x in request.form.values()]
+    # gets the inputs from the submitted form's values. 
+
+
+    input_array = np.array(input).reshape(1, -1)
+    df = pd.DataFrame(columns=request.form.keys(), data=input_array)
+    # reshapes the array of the inputs into a format the model can understand. 
+    output=str(model.predict(df)[0])
+
+    # makes the prediction of the inputs passed in with the model. 
+    return render_template("home.html", prediction_test=output)
 
 
 if __name__=="__main__":
