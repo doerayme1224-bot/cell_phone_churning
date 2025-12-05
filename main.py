@@ -23,16 +23,13 @@ def predict_api():
 @app.route('/predict', methods=['POST'])
 def predict():
     input=[float(x) for x in request.form.values()]
-    # gets the inputs from the submitted form's values. 
-
-
     input_array = np.array(input).reshape(1, -1)
     df = pd.DataFrame(columns=request.form.keys(), data=input_array)
-    # reshapes the array of the inputs into a format the model can understand. 
-    output=str(model.predict(df)[0])
-
-    # makes the prediction of the inputs passed in with the model. 
-    return render_template("home.html", prediction_test=output)
+    output=int(model.predict(df)[0])
+    if output == 0:
+        return render_template("home.html", prediction_test="The Client is not Likely to Churn")
+    else:
+        return render_template("home.html", prediction_test="The Client is Likely to Churn")
 
 
 if __name__=="__main__":
